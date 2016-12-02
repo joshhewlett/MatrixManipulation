@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Matrix Manipulation | MAT 343</title>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="./css/materialize.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha25616cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+        
+        <script src="./js/materialize.js"></script>
+        <link rel="stylesheet" href="./css/index.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <script src="./js/backbone-min.js"></script>
+        <script src="./js/underscore-min.js"></script>
+        <script src="./js/two.min.js"></script>
+        <script src="./js/matrix.js"></script>
+        
+    </head>
+    
+    <body>
+<!--        NavBar -->
+        <nav class="blue">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo center">Matrix Manipulator</a>
+
+                <ul id="nav-mobile" class="right">
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+        </nav>
+        
+<!--        Home page -->
+        <main>
+         
+<!--               Manipulator Div -->
+               <div id="control" class="left">
+                   <label id="manipLabel">Manipulator</label>
+                   <br>
+                   
+<!--                   Image column-->
+                   <div id="imgCol" class="manCol left">
+                      <label class="colLabel">Image</label>
+                      
+                     
+                     <ul class="center">
+<!--                            Point A-->
+                         <li>
+                             <ul class="inline">
+                                 <li class="inline">
+                                     Point A:
+                                 </li>
+                                 
+                                 <li class="inline">
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox" id="aSwitch">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="X" id="aXPos" type="text" class="validate">
+                                         <label for="xPos"></label>
+                                         
+                                         
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="Y" id="aYPos" type="text" class="validate">
+                                         <label for="yPos"></label>
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline" style="width:20%;">
+                                     <div>
+                                        <select multiple id="aPoints">
+                                          <option value="" disabled selected>Points</option>
+                                          <option value="1">B</option>
+                                          <option value="2">C</option>
+                                          <option value="3">D</option>
+                                          <option value="4">E</option>
+                                          <option value="5">F</option>
+                                          <option value="6">G</option>
+                                          <option value="7">H</option>
+                                        </select>
+                                      </div>
+                                 </li>
+                             </ul>
+                         </li>
+                         
+<!--                            Point B-->
+                         <li>
+                             <ul class="inline">
+                                 <li class="inline">
+                                     Point B:
+                                 </li>
+                                 
+                                 <li class="inline">
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox" id="bSwitch">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="X" id="bXPos" type="text" class="validate">
+                                         <label for="xPos"></label>
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="Y" id="bYPos" type="text" class="validate">
+                                         <label for="yPos"></label>
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline" style="width:20%;">
+                                     <div>
+                                        <select multiple id="bPoints">
+                                          <option value="" disabled selected>Points</option>
+                                          <option value="1">A</option>
+                                          <option value="2">C</option>
+                                          <option value="3">D</option>
+                                          <option value="4">E</option>
+                                          <option value="5">F</option>
+                                          <option value="6">G</option>
+                                          <option value="7">H</option>
+                                        </select>
+                                      </div>
+                                 </li>
+                             </ul>
+                         </li>
+                         
+<!--                            Point C-->
+                         <li>
+                             <ul class="inline">
+                                 <li class="inline">
+                                     Point C:
+                                 </li>
+                                 
+                                 <li class="inline">
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox" id="cSwitch">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="X" id="cXPos" type="text" class="validate">
+                                         <label for="xPos"></label>
+                                         
+                                         
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="Y" id="cYPos" type="text" class="validate">
+                                         <label for="yPos"></label>
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline" style="width:20%;">
+                                     <div>
+                                        <select multiple id="cPoints">
+                                          <option value="" disabled selected>Points</option>
+                                          <option value="1">A</option>
+                                          <option value="2">B</option>
+                                          <option value="3">D</option>
+                                          <option value="4">E</option>
+                                          <option value="5">F</option>
+                                          <option value="6">G</option>
+                                          <option value="7">H</option>
+                                        </select>
+                                      </div>
+                                 </li>
+                             </ul>
+                         </li>
+                         
+<!--                            Point D-->
+                         <li>
+                             <ul class="inline">
+                                 <li class="inline">
+                                     Point D:
+                                 </li>
+                                 
+                                 <li class="inline">
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox" id="dSwitch">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="X" id="dXPos" type="text" class="validate">
+                                         <label for="xPos"></label>
+                                         
+                                         
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="Y" id="dYPos" type="text" class="validate">
+                                         <label for="yPos"></label>
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline" style="width:20%;">
+                                     <div>
+                                        <select multiple id="dPoints">
+                                          <option value="" disabled selected>Points</option>
+                                          <option value="1">A</option>
+                                          <option value="2">B</option>
+                                          <option value="3">C</option>
+                                          <option value="4">E</option>
+                                          <option value="5">F</option>
+                                          <option value="6">G</option>
+                                          <option value="7">H</option>
+                                        </select>
+                                      </div>
+                                 </li>
+                             </ul>
+                         </li>
+                         
+<!--                            Point E-->
+                         <li>
+                             <ul class="inline">
+                                 <li class="inline">
+                                     Point E:
+                                 </li>
+                                 
+                                 <li class="inline">
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox" id="eSwitch">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="X" id="eXPos" type="text" class="validate">
+                                         <label for="xPos"></label>
+                                         
+                                         
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="Y" id="eYPos" type="text" class="validate">
+                                         <label for="yPos"></label>
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline" style="width:20%;">
+                                     <div>
+                                        <select multiple id="ePoints">
+                                          <option value="" disabled selected>Points</option>
+                                          <option value="1">A</option>
+                                          <option value="2">B</option>
+                                          <option value="3">C</option>
+                                          <option value="4">D</option>
+                                          <option value="5">F</option>
+                                          <option value="6">G</option>
+                                          <option value="7">H</option>
+                                        </select>
+                                      </div>
+                                 </li>
+                             </ul>
+                         </li>
+                         
+<!--                            Point F-->
+                         <li>
+                             <ul class="inline">
+                                 <li class="inline">
+                                     Point F:
+                                 </li>
+                                 
+                                 <li class="inline">
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox" id="fSwitch">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="X" id="fXPos" type="text" class="validate">
+                                         <label for="xPos"></label>
+                                         
+                                         
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="Y" id="fYPos" type="text" class="validate">
+                                         <label for="yPos"></label>
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline" style="width:20%;">
+                                     <div>
+                                        <select multiple id="fPoints">
+                                          <option value="" disabled selected>Points</option>
+                                          <option value="1">A</option>
+                                          <option value="2">B</option>
+                                          <option value="3">C</option>
+                                          <option value="4">D</option>
+                                          <option value="5">E</option>
+                                          <option value="6">G</option>
+                                          <option value="7">H</option>
+                                        </select>
+                                      </div>
+                                 </li>
+                             </ul>
+                         </li>
+                         
+<!--                            Point G-->
+                         <li>
+                             <ul class="inline">
+                                 <li class="inline">
+                                     Point G:
+                                 </li>
+                                 
+                                 <li class="inline">
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox" id="gSwitch">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="X" id="gXPos" type="text" class="validate">
+                                         <label for="xPos"></label>
+                                         
+                                         
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="Y" id="gYPos" type="text" class="validate">
+                                         <label for="yPos"></label>
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline" style="width:20%;">
+                                     <div>
+                                        <select multiple id="gPoints">
+                                          <option value="" disabled selected>Points</option>
+                                          <option value="1">A</option>
+                                          <option value="2">B</option>
+                                          <option value="3">C</option>
+                                          <option value="4">D</option>
+                                          <option value="5">E</option>
+                                          <option value="6">F</option>
+                                          <option value="7">H</option>
+                                        </select>
+                                      </div>
+                                 </li>
+                             </ul>
+                         </li>
+                         
+<!--                            Point H-->
+                         <li>
+                             <ul class="inline">
+                                 <li class="inline">
+                                     Point H:
+                                 </li>
+                                 
+                                 <li class="inline">
+                                    <div class="switch">
+                                        <label>
+                                            <input type="checkbox" id="hSwitch">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="X" id="hXPos" type="text" class="validate">
+                                         <label for="xPos"></label>
+                                         
+                                         
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input placeholder="Y" id="hYPos" type="text" class="validate">
+                                         <label for="yPos"></label>
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline" style="width:20%;">
+                                     <div>
+                                        <select multiple id="hPoints">
+                                          <option value="" disabled selected>Points</option>
+                                          <option value="1">A</option>
+                                          <option value="2">B</option>
+                                          <option value="3">C</option>
+                                          <option value="4">D</option>
+                                          <option value="5">E</option>
+                                          <option value="6">F</option>
+                                          <option value="7">G</option>
+                                        </select>
+                                      </div>
+                                 </li>
+                             </ul>
+                         </li>
+                         
+                         <li>
+                             
+                         </li>
+                     </ul>
+                      
+                      
+                   </div>
+                   
+                   
+<!--                   Transform column -->
+                   <div id="transCol" class="manCol right">
+                       <label class="colLabel">Transform</label>
+                       
+                       <ul class="center">
+                          
+                           <ul class="inline transList">
+                               <li class="inline transLabel">Scale:&#160;&#160;
+                                   <p class="range-field inline slider">
+                                    <input type="range" id="scale" min="0" max="3" onchange="go();"/>
+                                   </p>
+                               </li>
+                           </ul>
+                           
+                           <ul class="inline transList">
+                               <li class="inline transLabel">Rotation:&#160;&#160;
+                                   <p class="range-field inline slider">
+                                     <input type="range" id="rotate" min="0" max="360" onchange="go();"/>
+                                   </p>
+                               </li>
+                           </ul>
+                           
+                           <ul>
+                               <li id="matrixTitle">
+                                   <p> -- Transformation Matrix -- </p>
+                               </li>
+                               
+                               <li>
+                                   <li class="inline pos">
+                                     <form>
+                                         <input id="mA" type="text" class="validate center matrix" value="1.0">
+                                         <label for="mA"></label>
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input id="mB" type="text" class="validate center matrix" value="0.0">
+                                         <label for="mB"></label>
+                                     </form>
+                                 </li>
+                               </li>
+                               
+                               <li>
+                                   <li class="inline pos">
+                                     <form>
+                                         <input id="mC" type="text" class="validate center matrix" value="0.0">
+                                         <label for="mC"></label>
+                                         
+                                         
+                                     </form>
+                                 </li>
+                                 
+                                 <li class="inline pos">
+                                     <form>
+                                         <input id="mD" type="text" class="validate center matrix" value="1.0">
+                                         <label for="mD"></label>
+                                     </form>
+                                 </li>
+                               </li>
+                           </ul>
+                           
+                           <li>
+                               <li class="inline">
+                                 <a class="waves-effect waves-light btn" onClick="identity();">Identity</a>
+                             </li>
+                           </li>
+                           
+                       </ul>
+                       
+                       
+                       
+                   </div>
+                
+                     
+                      <div class="center">
+                        <ul class="inline center">
+                             <li class="inline" style="padding-right: 3%;">
+                                 <a class="waves-effect waves-light btn" onClick="go();">Go</a>
+                             </li>
+                             <li class="inline">
+                                 <a class="waves-effect waves-light btn" onClick="defaultButton();">Default</a>
+                             </li>
+                        </ul>
+                    </div>
+               </div>
+               
+<!--               Graphing Div -->
+               <div id="canvas-container" class="right">
+                   <div id="canvas"></div>
+                   <script type="text/javascript" src="./js/index.js"></script>
+               </div>
+            
+        </main>
+       
+        
+    </body>
+</html>

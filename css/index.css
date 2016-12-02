@@ -1,0 +1,118 @@
+main{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+#control {
+    width: 50%;
+    height: 600px;
+    
+    margin-top: 5%;
+    margin-left: 4%;
+    margin-right: 0%;
+    padding: 1%;
+	display: inline-block;
+    border-radius: 10px;
+    background-color: #1976D2;
+    color: white;
+}
+
+#canvas-container{
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-right: 8%;
+}
+
+#canvas {
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+}
+
+#manipLabel {
+    display: block;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+.manCol {
+    margin-top: 1%;
+    width: 47%;
+    height: 75%;
+    background-color: #2196F3;
+    border-radius: 5px;
+}
+
+.pos{
+    width: 10%;
+    padding-right: 1%;
+}
+
+#imgCol {
+    margin-left: 1%;
+    overflow-y: auto;
+}
+
+.imgControl{
+    margin-left: 1%;
+    
+}
+
+#transCol {
+	margin-right: 1%;
+}
+
+.transLabel{
+    font-size: 18px;
+    width: 100%;
+    text-align: auto;
+}
+
+.colLabel {
+    margin-top: 2%;
+	display: block;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+
+.transList {
+	width: 100%;
+    height: 20%;
+}
+.inline{
+    display: inline-block;
+}
+
+input {
+    border: 3px white solid;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid white;
+}
+
+.slider{
+    width: 50%;
+    height: 40%;
+    margin-top: 0;
+    margin-left: 5%;
+    text-align: right;
+}
+
+#matrixTitle {
+	margin-top: 0;
+}
+
+option {
+    height:20px;
+    font-size:14px;
+    overflow-y: auto;
+}
+
+.matrix {
+    width: 15px;
+}
